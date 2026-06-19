@@ -7,7 +7,7 @@ async function update(){
         "https://api.football-data.org/v4/competitions/WC/matches",
         {
             headers: {
-                "X-AUTH-TOKEN": process.env.FTBL_KEY
+                "X-Auth-Token": process.env.FTBL_KEY
             }
         }
     );
