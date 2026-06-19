@@ -22,7 +22,7 @@ jobs:
       - name: Run API script
         env:
           FTBL_KEY: ${{ secrets.FTBL_KEY }}
-        run: node scripts/api.js 
+        run: node scripts/api.js
 
       - name: Commit changes
         run: |
