@@ -22,8 +22,8 @@ async function update(){
     );
 }
 
-update();
-
 const date = new Date();
 
 fs.writeFileSync("data/refresh.txt", String(date));
+
+update();
