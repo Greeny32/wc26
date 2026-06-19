@@ -2,7 +2,7 @@ name: Update Fixtures
 
 on:
   schedule:
-    - cron: '0 * * * *' #update hourly at x:45
+    - cron: '*/10 * * * *' #update  every 10 mins
   workflow_dispatch:       # manual run button
 
 permissions:

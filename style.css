@@ -1,3 +1,8 @@
+body {
+    background-image: linear-gradient(180deg, rgb(0, 6, 56), rgb(12, 12, 12));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 header {
     h1 {
         font-size: 25px;
@@ -14,26 +19,10 @@ header {
     border-width: 1px;
     border-color: rgb(94, 94, 94);
     border-radius: 50px;
-    font-size: 10px
-}
-
-
-@media (min-width: 740px) {
-    header {
-
-        h1 {
-            font-size: 45px;
-        }
-
-    }
-
-    p {
-        font-size: 13px;
-    }
+    font-size: 10pxs
 }
 
 * {
-    background-color: rgb(36, 36, 36);
     font-family: "Roboto", sans-serif;
     color: white;
 }
@@ -42,7 +31,6 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1em;
-
 
     p {
         background-color: transparent;
@@ -66,7 +54,9 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 14px;
+
 }
+
 .match p {
     flex: 0 0 100%;
     font-size: 10px;
@@ -79,7 +69,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-    padding-bottom: 20px;
+    margin: 0;
 }
 
 .btn {
@@ -95,8 +85,9 @@ nav {
     justify-content: center;
     align-items: center;
     transition: all .10s ease;
-    border: 1px solid rgba(255,255,255,.15);
+    border: 1px solid rgba(255, 255, 255, .15);
 }
+
 
 .btn:hover {
     background: rgb(2, 59, 28);
@@ -109,4 +100,33 @@ nav {
     width: 40px;
     height: auto;
     border-radius: 5%;
+}
+
+@media (min-width: 740px) {
+    header h1 {
+        font-size: 45px;
+    }
+
+    .date {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .container p {
+        font-size: 16px;
+    }
+
+    .match {
+        font-size: 20px;
+        width: 80%;
+        align-self: center;
+    }
+
+    .flag {
+        width: 65px;
+    }
 }
