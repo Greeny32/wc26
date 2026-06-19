@@ -1,7 +1,25 @@
 const date = new Date();
 date.setDate(date.getDate());
-
+const btn_left = document.getElementById("dayBack");
+const btn_right = document.getElementById("dayFwd");
 const txt_date = document.getElementById("date");
+
+btn_left.addEventListener("click", date_left);
+btn_right.addEventListener("click", date_right);
+
+
+function date_left(){
+    document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
+    date.setDate(date.getDate()-1);
+    main();
+}
+
+
+function date_right(){
+    document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
+    date.setDate(date.getDate()+1);
+    main();
+}
 
 // UPDATE DATE
 function updateDate() {

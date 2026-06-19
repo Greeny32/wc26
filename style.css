@@ -2,24 +2,25 @@ header {
     h1 {
         font-size: 25px;
     }
+}
 
-    p {
+p {
         font-size: 13px;
-    }
 }
 
 
 @media (min-width: 740px) {
     header {
-        p {
-            font-size: 13px;
-        }
 
         h1 {
             font-size: 45px;
         }
+        
     }
 
+    p {
+        font-size: 13px;
+    }
 }
 
 * {
@@ -48,4 +49,12 @@ header {
     border-width: 1px;
     padding: 1em;
     background-color: rgb(31, 31, 31);
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
 }
