@@ -5,8 +5,16 @@ header {
     }
 }
 
-p {
-    font-size: 13px;
+.date {
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(94, 94, 94);
+    border-radius: 50px;
+    font-size: 10px
 }
 
 
@@ -57,9 +65,13 @@ p {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    font-size: 14px;
 }
 .match p {
     flex: 0 0 100%;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 nav {
@@ -93,8 +105,8 @@ nav {
 }
 
 .flag {
-    width: 15%;
+    display: flex;
+    width: 40px;
     height: auto;
     border-radius: 5%;
-    align-self: stretch;
 }

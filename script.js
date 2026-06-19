@@ -74,8 +74,8 @@ function load_display(todayMatches) {
     for (let i = 0; i < numItems; i++) {
         // Get fixtures
         let match = todayMatches[i];
-        let ht = match.homeTeam.name;
-        let at = match.awayTeam.name;
+        let ht = match.homeTeam.shortName;
+        let at = match.awayTeam.shortName;
         let status = match.status;
         var ko_time = new Date(match.utcDate).toLocaleTimeString([], {
             hour: "2-digit",
@@ -84,7 +84,6 @@ function load_display(todayMatches) {
         });
         let g = match.group
         let group = g.slice(-1);
-        console.log(group)
 
         // If finished display score otherwise time
         if (status == "FINISHED") {
@@ -109,7 +108,7 @@ function load_display(todayMatches) {
         text.textContent = `${ht} ${score} ${at}`;
 
         const groupText = document.createElement("p");
-        groupText.textContent = "Group: " + String(group);
+        groupText.textContent = "Group " + String(group);
 
         // container div
         const div = document.createElement("div");
