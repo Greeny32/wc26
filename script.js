@@ -9,7 +9,7 @@ btn_left.addEventListener("click", date_left);
 btn_right.addEventListener("click", date_right);
 btn_date.addEventListener("click", reset_date);
 
-function reset_date(){
+function reset_date() {
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     date = new Date();
     main();
@@ -142,17 +142,34 @@ function load_display(todayMatches) {
     }
 }
 
-async function refresh(){
-    const time = await fetch("last-run.txt");
-    const refresh_time = new Date(time);
-    console.log(refresh_time);
-    refresh.textContent = refresh_time;
+async function refresh() {
+    const res = await fetch("last-run.txt");
+    const time = await res.text();
+
+    const refresh_time = new Date(time.trim());
+
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+    });
+
+
+    txt_refresh.textContent = "Refreshed: "+formatter.format(refresh_time);
+
 }
 
 async function main() {
     updateDate();
     refresh()
     const todayMatches = await load();
+
+
+
     await load_display(todayMatches);
 }
 
