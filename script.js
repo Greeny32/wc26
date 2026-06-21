@@ -3,6 +3,7 @@ date.setDate(date.getDate());
 const btn_left = document.getElementById("dayBack");
 const btn_right = document.getElementById("dayFwd");
 const btn_date = document.getElementById("date");
+const txt_refresh = document.getElementById("refresh");
 
 btn_left.addEventListener("click", date_left);
 btn_right.addEventListener("click", date_right);
@@ -141,10 +142,20 @@ function load_display(todayMatches) {
     }
 }
 
+async function refresh(){
+    const time = await fetch("last-run.txt");
+    const refresh_time = new Date(time);
+    console.log(refresh_time);
+    refresh.textContent = refresh_time;
+}
+
 async function main() {
     updateDate();
+    refresh()
     const todayMatches = await load();
     await load_display(todayMatches);
 }
+
+
 
 main();
