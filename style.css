@@ -37,7 +37,6 @@ header {
     gap: 1em;
 }
 
-
 .match {
     display: flex;
     align-items: center;
@@ -72,8 +71,6 @@ header {
 .match .result{
     color: gold;
 }
-
-
 
 /* Away team */
 .match p:nth-of-type(3) {
@@ -115,19 +112,26 @@ nav {
 }
 
 .groups {
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    
-    padding: 20px;
-    color: white;
+    background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
+    border: solid;
+    border-color: rgb(94, 94, 94);
+    border-width: 1px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px;
+    color: inherit;
     text-decoration: inherit;
 }
 .btn:hover {
     background: rgb(2, 59, 28);
     transform: scale(1.08);
     box-shadow: 0 0 5px rgba(60, 255, 0, 0.6);
+}
+
+.groupsbtn {
+    padding: 20px;
 }
 
 .flag {
@@ -191,5 +195,13 @@ nav {
 
     .flag {
         width: 65px;
+    }
+
+    .container {
+        font-size: 20px
+    }
+
+    .match p:nth-of-type(2) {
+        font-size: 20px;
     }
 }

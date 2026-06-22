@@ -31,12 +31,21 @@ h1 {
 nav {
     padding-bottom: 20px;
 }
-
-/* Remove styling from the hyperlink */
 .index {
+    background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
+    border: solid;
+    border-color: rgb(94, 94, 94);
+    border-width: 1px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px;
     color: inherit;
     text-decoration: inherit;
 }
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -60,4 +69,13 @@ nav {
 
 .group_name {
     color: gold;
+}
+
+@media (min-width: 740px){
+    .box{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 75%;
+        align-self: center;
+    }
 }
