@@ -4,26 +4,26 @@ const fs = require("fs");
 console.log("KEY EXISTS:", !!process.env.FTBL_KEY);
 console.log("KEY VALUE:", process.env.FTBL_KEY);
 
-async function update(){
-    // Call api
-    const response = await fetch(
-        "https://api.football-data.org/v4/competitions/WC",
-        {
-            headers: {
-                "X-Auth-Token": process.env.FTBL_KEY
-            }
-        }
-    );
+async function update() {
+    const [standings, matches] = await Promise.all([
+        get("/competitions/WC/standings"),
+        get("/competitions/WC/matches")
+    ]);
+
     const data = await response.json();
+
+    const data = {
+        standings,
+        matches,
+        updated: new Date().toISOString()
+    };
 
     fs.writeFileSync(
         "data/fixtures.json",
         JSON.stringify(data, null, 2)
     );
+
+
 }
-
-const date = new Date();
-
-fs.writeFileSync("data/refresh.txt", String(date));
 
 update();
