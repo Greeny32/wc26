@@ -4,21 +4,23 @@ const btn_left = document.getElementById("dayBack");
 const btn_right = document.getElementById("dayFwd");
 const btn_date = document.getElementById("date");
 const txt_refresh = document.getElementById("refresh");
+const btn_groups = document.getElementById("groups");
+
 
 btn_left.addEventListener("click", date_left);
 btn_right.addEventListener("click", date_right);
 btn_date.addEventListener("click", reset_date);
 
 function reset_date() {
+    
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     date = new Date();
     main();
 }
 
 function date_left() {
-    document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     date.setDate(date.getDate() - 1);
-
+    document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     main();
 }
 
@@ -71,17 +73,16 @@ async function load() {
         return matchTime >= start && matchTime < end;
     });
 
+    console.log(todayMatches);
     return todayMatches;
-
 }
 
 function load_display(todayMatches) {
     // PUT FIXTURES IN DOCUMENT
     const container = document.getElementById("container");
     const numItems = 4
-    for (let i = 0; i < numItems; i++) {
+    for (const match of todayMatches) {
         // Get fixtures
-        let match = todayMatches[i];
         let ht = match.homeTeam.shortName;
         let at = match.awayTeam.shortName;
         let status = match.status;
@@ -168,6 +169,8 @@ async function main() {
     // remove refresh text
     txt_refresh.classList.remove("refresh_in");
     txt_refresh.classList.add("refresh_remove");
+    btn_groups.classList.remove("refresh_in");
+    btn_groups.classList.add("refresh_remove");
 
     updateDate();
     refresh(); 
@@ -176,9 +179,10 @@ async function main() {
 
     // add refresh text
     txt_refresh.classList.remove("refresh_remove");
+    btn_groups.classList.remove("refresh_remove");
     void txt_refresh.offsetWidth; // restart animation reliably
     txt_refresh.classList.add("refresh_in");
-
+    btn_groups.classList.add("refresh_in");
 }
 
 

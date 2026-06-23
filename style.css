@@ -6,8 +6,8 @@ body {
     background-attachment: fixed;
     font-family: "Inter", sans-serif;
     color: white;
-
 }
+
 header {
     h1 {
         font-size: 28px;
@@ -68,7 +68,8 @@ header {
     font-weight: bold;
     font-size: 16px;
 }
-.match .result{
+
+.match .result {
     color: gold;
 }
 
@@ -102,7 +103,7 @@ nav {
     border-radius: 50%;
     background: rgb(3, 107, 50);
     color: white;
-    font-size: 10px;
+    font-size: 15px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -114,16 +115,17 @@ nav {
 .groups {
     background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
     border: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: transparent;
     border-width: 1px;
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 50px;
-    color: inherit;
+    color: transparent;
     text-decoration: inherit;
 }
+
 .btn:hover {
     background: rgb(2, 59, 28);
     transform: scale(1.08);
@@ -145,13 +147,26 @@ nav {
 }
 
 
-@keyframes refresh_in{
-    from {color: transparent;}
-    to {color: white;}
+@keyframes refresh_in {
+    from {
+        color: transparent;
+        border-color: transparent;
+    }
+
+    to {
+        color: white;
+        border-color: rgb(94, 94, 94);
+    }
 }
-@keyframes refresh_out{
-    from {color: white;}
-    to {color: transparent;}
+
+@keyframes refresh_out {
+    from {
+        color: white;
+    }
+
+    to {
+        color: transparent;
+    }
 }
 
 .refresh_text {
@@ -161,12 +176,14 @@ nav {
     justify-content: center;
     text-align: center;
 }
+
 .refresh_in {
     animation: refresh_in;
     animation-duration: 0.3s;
     animation-delay: 0.3s;
     animation-fill-mode: forwards;
 }
+
 .refresh_out {
     animation: refresh_out;
     animation-duration: 1s;
