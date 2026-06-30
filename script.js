@@ -12,7 +12,7 @@ btn_right.addEventListener("click", date_right);
 btn_date.addEventListener("click", reset_date);
 
 function reset_date() {
-    
+
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     date = new Date();
     main();
@@ -86,10 +86,10 @@ function load_display(todayMatches) {
         let at = match.awayTeam.shortName;
 
         // check if team is null
-        if (ht == null){
+        if (ht == null) {
             ht = "None";
         }
-        if (at == null){
+        if (at == null) {
             at = "None";
         }
 
@@ -104,8 +104,23 @@ function load_display(todayMatches) {
         var txt_score = document.createElement("p");
         // If finished display score otherwise time
         if (status == "FINISHED") {
-            var scr_ht = match.score.fullTime.home;
-            var scr_at = match.score.fullTime.away;
+            console.log(match.score.duration);
+            if (match.score.duration == "PENALTY_SHOOTOUT") {
+                let home_ft = match.score.regularTime.home;
+                let away_ft = match.score.regularTime.away;
+                let home_et = match.score.extraTime.home;
+                let away_et = match.score.regularTime.away;
+                let home_pen = match.score.penalties.home;
+                let away_pen = match.score.penalties.away;
+
+
+                var scr_ht = (home_ft+home_et) + " ("+home_pen+")";
+                var scr_at = "("+away_pen+") "+(away_ft+away_et);
+            } else {
+                var scr_ht = match.score.fullTime.home;
+                var scr_at = match.score.fullTime.away;
+            }
+
             var score = scr_ht + " - " + scr_at;
             txt_score.classList.add("result");
         }
@@ -114,12 +129,12 @@ function load_display(todayMatches) {
         }
 
         var groupText = document.createElement("p");
-        
-        if (match.stage == "GROUP"){
+
+        if (match.stage == "GROUP_STAGE") {
             let g = match.group
             var group = g.slice(-1);
             groupText.textContent = "Group " + String(group);
-           
+
         } else {
             // create a lookup table to format output
             const labels = {
@@ -133,7 +148,7 @@ function load_display(todayMatches) {
 
             groupText.textContent = labels[match.stage] || match.stage;
         }
-        
+
         // load images
         var ht_img = document.createElement("img");
         ht_img.src = getFlag(ht);
@@ -146,7 +161,7 @@ function load_display(todayMatches) {
         txt_at.textContent = at;
 
         txt_score.textContent = score;
-        
+
 
         // container div
         const div = document.createElement("div");
@@ -185,10 +200,10 @@ async function refresh() {
         hour12: false
     });
 
-    txt_refresh.textContent = "Refreshed: "+formatter.format(refresh_time);
+    txt_refresh.textContent = "Refreshed: " + formatter.format(refresh_time);
 
     // Restart animation
-    
+
 }
 
 async function main() {
@@ -199,7 +214,7 @@ async function main() {
     btn_groups.classList.add("refresh_remove");
 
     updateDate();
-    refresh(); 
+    refresh();
     const todayMatches = await load();
     await load_display(todayMatches);
 
