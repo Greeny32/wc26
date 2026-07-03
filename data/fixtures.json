@@ -1030,7 +1030,7 @@
       "count": 104,
       "first": "2026-06-11",
       "last": "2026-07-19",
-      "played": 85
+      "played": 86
     },
     "competition": {
       "id": 2000,
@@ -6691,11 +6691,11 @@
         },
         "id": 537428,
         "utcDate": "2026-07-03T18:00:00Z",
-        "status": "IN_PLAY",
+        "status": "FINISHED",
         "matchday": null,
         "stage": "LAST_32",
         "group": null,
-        "lastUpdated": "2026-07-03T19:54:12Z",
+        "lastUpdated": "2026-07-03T20:58:23Z",
         "homeTeam": {
           "id": 779,
           "name": "Australia",
@@ -6711,15 +6711,27 @@
           "crest": "https://crests.football-data.org/825.svg"
         },
         "score": {
-          "winner": "DRAW",
-          "duration": "REGULAR",
+          "winner": null,
+          "duration": "PENALTY_SHOOTOUT",
           "fullTime": {
-            "home": 1,
-            "away": 1
+            "home": 3,
+            "away": 5
           },
           "halfTime": {
             "home": 0,
             "away": 1
+          },
+          "regularTime": {
+            "home": 1,
+            "away": 1
+          },
+          "extraTime": {
+            "home": 0,
+            "away": 0
+          },
+          "penalties": {
+            "home": 4,
+            "away": 4
           }
         },
         "odds": {
@@ -6791,7 +6803,14 @@
         "odds": {
           "msg": "Activate Odds-Package in User-Panel to retrieve odds."
         },
-        "referees": []
+        "referees": [
+          {
+            "id": 77052,
+            "name": "Drew Fischer",
+            "type": "REFEREE",
+            "nationality": "Canada"
+          }
+        ]
       },
       {
         "area": {
