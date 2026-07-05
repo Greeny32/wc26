@@ -11,8 +11,12 @@ btn_left.addEventListener("click", date_left);
 btn_right.addEventListener("click", date_right);
 btn_date.addEventListener("click", reset_date);
 
-function reset_date() {
+function disableInAppInstallPrompt() {
+  installPrompt = null;
+  installButton.setAttribute("hidden", "");
+}
 
+function reset_date() {
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     date = new Date();
     main();
@@ -208,9 +212,6 @@ async function refresh() {
     });
 
     txt_refresh.textContent = "Refreshed: " + formatter.format(refresh_time);
-
-    // Restart animation
-
 }
 
 async function main() {
@@ -233,6 +234,7 @@ async function main() {
     btn_groups.classList.add("refresh_in");
 }
 
+// function to animate the removal of all matches
 
 
 main();
