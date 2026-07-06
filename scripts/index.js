@@ -5,6 +5,7 @@ const btn_right = document.getElementById("dayFwd");
 const btn_date = document.getElementById("date");
 const txt_refresh = document.getElementById("refresh");
 const btn_groups = document.getElementById("groups");
+const btn_knockouts = document.getElementById("knockouts");
 
 
 btn_left.addEventListener("click", date_left);
@@ -83,7 +84,6 @@ async function load() {
 function load_display(todayMatches) {
     // PUT FIXTURES IN DOCUMENT
     const container = document.getElementById("container");
-    const numItems = 4
     for (const match of todayMatches) {
         // Get fixtures
         let ht = match.homeTeam.shortName;
@@ -108,7 +108,6 @@ function load_display(todayMatches) {
         var txt_score = document.createElement("p");
         // If finished display score otherwise time
         if (status == "FINISHED") {
-            console.log(match.score.duration);
             if (match.score.duration == "PENALTY_SHOOTOUT") {
                 let home_ft = match.score.regularTime.home;
                 let away_ft = match.score.regularTime.away;
@@ -220,6 +219,8 @@ async function main() {
     txt_refresh.classList.add("refresh_remove");
     btn_groups.classList.remove("refresh_in");
     btn_groups.classList.add("refresh_remove");
+    btn_knockouts.classList.remove("refresh_in");
+    btn_knockouts.classList.add("refresh_remove");
 
     updateDate();
     refresh();
@@ -232,6 +233,7 @@ async function main() {
     void txt_refresh.offsetWidth; // restart animation reliably
     txt_refresh.classList.add("refresh_in");
     btn_groups.classList.add("refresh_in");
+    btn_knockouts.classList.add("refresh_in");
 }
 
 // function to animate the removal of all matches

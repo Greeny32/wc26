@@ -25,7 +25,7 @@ async function display_group(standings){
         
         // for each team
         for (let j=0; j < 4; j++){
-
+            
             // display team name
             const team = group.table[j];
             var txt_team = document.createElement("p");

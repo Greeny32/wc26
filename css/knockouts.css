@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+    background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-wrap: 100%;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+footer{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.index {
+    background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
+    border: solid;
+    border-color: rgb(94, 94, 94);
+    border-width: 1px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+.btn{
+    cursor: pointer;
+    background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
+    color: white;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: rgb(94, 94, 94);
+    font-size: 16px;
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 1em;
+}
+
+.match {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 6px;
+    gap: 6px;
+    border-radius: 10px;
+
+    background-image: linear-gradient(140deg, rgb(7, 0, 37), rgb(8, 7, 48));
+    border: 1px solid rgb(94, 94, 94);
+}
+
+.flag {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+}
+
+/* Home team */
+.match p:nth-of-type(1) {
+    flex: 1;
+    text-align: left;
+}
+
+/* Score */
+.match p:nth-of-type(2) {
+    flex: 0 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.match .result {
+    color: gold;
+}
+
+/* Away team */
+.match p:nth-of-type(3) {
+    flex: 1;
+    text-align: right;
+}
+
+/* Group */
+.match p:nth-of-type(4) {
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+    font-size: 10px;
+    color: #bbb;
+}

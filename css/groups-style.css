@@ -25,11 +25,12 @@ header, nav {
     animation-fill-mode: forwards;
 }
 h1 {
-    font-size: 28px;
     font-weight: bold;
 }
 nav {
     padding-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
 }
 .index {
     background-image: linear-gradient(150deg, rgb(4, 0, 26), rgb(7, 0, 32));
@@ -40,7 +41,7 @@ nav {
     padding-bottom: 6px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 50px;
+    border-radius: 10px;
     color: inherit;
     text-decoration: inherit;
 }
