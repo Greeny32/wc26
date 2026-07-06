@@ -133,7 +133,10 @@ nav {
 }
 
 .groupsbtn {
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .flag {
@@ -192,7 +195,7 @@ nav {
 
 .page_buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 @media (min-width: 740px) {

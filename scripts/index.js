@@ -230,7 +230,7 @@ async function main() {
     // add refresh text
     txt_refresh.classList.remove("refresh_remove");
     btn_groups.classList.remove("refresh_remove");
-    void txt_refresh.offsetWidth; // restart animation reliably
+    void txt_refresh.offsetWidth;
     txt_refresh.classList.add("refresh_in");
     btn_groups.classList.add("refresh_in");
     btn_knockouts.classList.add("refresh_in");

@@ -3,6 +3,10 @@ const btn_16 = document.getElementById("r16");
 const btn_qf = document.getElementById("qf");
 const btn_sf = document.getElementById("sf");
 const btn_f = document.getElementById("f");
+const btn_groups = document.getElementById("groups")
+const btn_schedule = document.getElementById("schedule")
+
+
 btn_32.addEventListener("click", () => update_round("LAST_32"));
 btn_16.addEventListener("click", () => update_round("LAST_16"));
 btn_qf.addEventListener("click", () => update_round("QUARTER_FINALS"));
@@ -14,7 +18,6 @@ var round = "LAST_32";
 
 function update_round(rnd) {
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
-
     round = rnd;
     main();
 }
@@ -143,10 +146,21 @@ function load_display(fixtures) {
 }
 
 async function main() {
+    btn_schedule.classList.remove("refresh_in");
+    btn_schedule.classList.add("refresh_remove");
+    btn_groups.classList.remove("refresh_in");
+    btn_groups.classList.add("refresh_remove");
+
     const fixtures = await load();
 
     // load display
     load_display(getRound(round, fixtures));
+
+    btn_schedule.classList.remove("refresh_remove");
+    btn_groups.classList.remove("refresh_remove");
+    void btn_schedule.offsetWidth;
+    btn_schedule.classList.add("refresh_in");
+    btn_groups.classList.add("refresh_in");
 }
 
 main();
