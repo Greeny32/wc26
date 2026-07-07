@@ -7375,7 +7375,7 @@
         "matchday": null,
         "stage": "LAST_16",
         "group": null,
-        "lastUpdated": "2026-07-07T20:19:18Z",
+        "lastUpdated": "2026-07-07T21:47:45Z",
         "homeTeam": {
           "id": 788,
           "name": "Switzerland",
@@ -7398,8 +7398,8 @@
             "away": 0
           },
           "halfTime": {
-            "home": null,
-            "away": null
+            "home": 0,
+            "away": 0
           }
         },
         "odds": {
