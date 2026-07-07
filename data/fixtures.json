@@ -1030,7 +1030,7 @@
       "count": 104,
       "first": "2026-06-11",
       "last": "2026-07-19",
-      "played": 94
+      "played": 95
     },
     "competition": {
       "id": 2000,
@@ -7305,11 +7305,11 @@
         },
         "id": 537381,
         "utcDate": "2026-07-07T16:00:00Z",
-        "status": "IN_PLAY",
+        "status": "FINISHED",
         "matchday": null,
         "stage": "LAST_16",
         "group": null,
-        "lastUpdated": "2026-07-07T17:30:21Z",
+        "lastUpdated": "2026-07-07T18:15:15Z",
         "homeTeam": {
           "id": 762,
           "name": "Argentina",
@@ -7325,10 +7325,10 @@
           "crest": "https://crests.football-data.org/825.svg"
         },
         "score": {
-          "winner": "AWAY_TEAM",
+          "winner": "HOME_TEAM",
           "duration": "REGULAR",
           "fullTime": {
-            "home": 0,
+            "home": 3,
             "away": 2
           },
           "halfTime": {
@@ -7371,11 +7371,11 @@
         },
         "id": 537382,
         "utcDate": "2026-07-07T20:00:00Z",
-        "status": "TIMED",
+        "status": "IN_PLAY",
         "matchday": null,
         "stage": "LAST_16",
         "group": null,
-        "lastUpdated": "2026-07-07T05:20:11Z",
+        "lastUpdated": "2026-07-07T20:19:18Z",
         "homeTeam": {
           "id": 788,
           "name": "Switzerland",
@@ -7391,11 +7391,11 @@
           "crest": "https://crests.football-data.org/818.svg"
         },
         "score": {
-          "winner": null,
+          "winner": "DRAW",
           "duration": "REGULAR",
           "fullTime": {
-            "home": null,
-            "away": null
+            "home": 0,
+            "away": 0
           },
           "halfTime": {
             "home": null,
@@ -7405,7 +7405,14 @@
         "odds": {
           "msg": "Activate Odds-Package in User-Panel to retrieve odds."
         },
-        "referees": []
+        "referees": [
+          {
+            "id": 190010,
+            "name": "Ivan Barton",
+            "type": "REFEREE",
+            "nationality": null
+          }
+        ]
       },
       {
         "area": {
