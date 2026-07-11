@@ -7581,11 +7581,11 @@
         },
         "id": 537385,
         "utcDate": "2026-07-11T21:00:00Z",
-        "status": "PAUSED",
+        "status": "IN_PLAY",
         "matchday": null,
         "stage": "QUARTER_FINALS",
         "group": null,
-        "lastUpdated": "2026-07-11T21:58:07Z",
+        "lastUpdated": "2026-07-11T23:14:07Z",
         "homeTeam": {
           "id": 8872,
           "name": "Norway",
@@ -7602,7 +7602,7 @@
         },
         "score": {
           "winner": "DRAW",
-          "duration": "REGULAR",
+          "duration": "EXTRA_TIME",
           "fullTime": {
             "home": 1,
             "away": 1
@@ -7610,6 +7610,14 @@
           "halfTime": {
             "home": 1,
             "away": 1
+          },
+          "regularTime": {
+            "home": null,
+            "away": null
+          },
+          "extraTime": {
+            "home": 0,
+            "away": 0
           }
         },
         "odds": {
@@ -7681,7 +7689,14 @@
         "odds": {
           "msg": "Activate Odds-Package in User-Panel to retrieve odds."
         },
-        "referees": []
+        "referees": [
+          {
+            "id": 38806,
+            "name": "João Pinheiro",
+            "type": "REFEREE",
+            "nationality": "Portugal"
+          }
+        ]
       },
       {
         "area": {
