@@ -19,7 +19,8 @@ function disableInAppInstallPrompt() {
 
 function reset_date() {
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
-    date = new Date();
+    date = new Date("2026-06-12");
+    date.setDate
     main();
 }
 

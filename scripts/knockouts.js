@@ -2,6 +2,7 @@ const btn_32 = document.getElementById("r32");
 const btn_16 = document.getElementById("r16");
 const btn_qf = document.getElementById("qf");
 const btn_sf = document.getElementById("sf");
+const btn_third = document.getElementById("third");
 const btn_f = document.getElementById("f");
 const btn_groups = document.getElementById("groups")
 const btn_schedule = document.getElementById("schedule")
@@ -11,6 +12,7 @@ btn_32.addEventListener("click", () => update_round("LAST_32"));
 btn_16.addEventListener("click", () => update_round("LAST_16"));
 btn_qf.addEventListener("click", () => update_round("QUARTER_FINALS"));
 btn_sf.addEventListener("click", () => update_round("SEMI_FINALS"));
+btn_third.addEventListener("click", () => update_round("THIRD_PLACE"));
 btn_f.addEventListener("click", () => update_round("FINAL"));
 
 
