@@ -1,4 +1,5 @@
-var date = new Date();
+var date = new Date("2026-06-12");
+
 date.setDate(date.getDate());
 const btn_left = document.getElementById("dayBack");
 const btn_right = document.getElementById("dayFwd");
@@ -13,8 +14,8 @@ btn_right.addEventListener("click", date_right);
 btn_date.addEventListener("click", reset_date);
 
 function disableInAppInstallPrompt() {
-  installPrompt = null;
-  installButton.setAttribute("hidden", "");
+    installPrompt = null;
+    installButton.setAttribute("hidden", "");
 }
 
 function reset_date() {
@@ -26,13 +27,36 @@ function reset_date() {
 
 function date_left() {
     date.setDate(date.getDate() - 1);
+
+    // only change if date is within world cup range
+    let minDate = 12;
+    let minMonth = 5; // index starts at 0
+    if (minDate > date.getDate()) {
+
+        if (minMonth >= date.getMonth()) {
+            // dont allow to move left
+            date.setDate(date.getDate() + 1);
+        }
+    }
+
     document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     main();
 }
 
 function date_right() {
-    document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     date.setDate(date.getDate() + 1);
+
+    // only change if date is within world cup range
+    let maxDate = 19;
+    let maxMonth = 6; // index starts at 0
+    if (maxDate < date.getDate()) {
+        if (maxMonth <= date.getMonth()) {
+            // dont allow to move left
+            date.setDate(date.getDate() - 1);
+        }
+    }
+
+    document.querySelector("main").innerHTML = '<center><div id="container", class="container"></div></center>';
     main();
 }
 
@@ -116,17 +140,17 @@ function load_display(todayMatches) {
                 let away_et = match.score.regularTime.away;
                 let home_pen = match.score.penalties.home;
                 let away_pen = match.score.penalties.away;
-                
+
                 // remove the added score
-                if (home_pen > away_pen){
+                if (home_pen > away_pen) {
                     home_ft -= 1;
                 }
                 else {
                     away_ft -= 1;
                 }
 
-                var scr_ht = (home_ft+home_et) + " ("+home_pen+")";
-                var scr_at = "("+away_pen+") "+(away_ft+away_et);
+                var scr_ht = (home_ft + home_et) + " (" + home_pen + ")";
+                var scr_at = "(" + away_pen + ") " + (away_ft + away_et);
             } else {
                 var scr_ht = match.score.fullTime.home;
                 var scr_at = match.score.fullTime.away;
