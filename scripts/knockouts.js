@@ -98,7 +98,7 @@ function load_display(fixtures) {
                 else {
                     away_ft -= 1;
                 }
-
+                
                 var scr_ht = (home_ft + home_et) + " (" + home_pen + ")";
                 var scr_at = "(" + away_pen + ") " + (away_ft + away_et);
             } else {
